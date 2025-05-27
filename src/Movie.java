@@ -30,12 +30,16 @@ public class Movie implements MediaItem, Rentable, Rateable{
 
     @Override
     public String displayInformation() {
-        return "name: " + title +
-                "\nauthor: " + director +
-                "\nyear: " + yearOfPublication +
-                "\nduration: " + duration +
-                "\nratings: " + getAverageRate() +
-                "\navailable: " + isAvailable + "\n";
+        String rateText = "N/A";
+        if(getAverageRate() != 0.0){
+            rateText = String.valueOf(getAverageRate());
+        }
+        return "Name: " + title +
+                "\nAuthor: " + director +
+                "\nYear: " + yearOfPublication +
+                "\nDuration: " + duration +
+                "\nAverage rating: " + rateText +
+                "\nAvailable: " + isAvailable + "\n";
     }
 
     @Override
@@ -44,7 +48,9 @@ public class Movie implements MediaItem, Rentable, Rateable{
         for(int i = 0; i < ratings.size(); i++){
             sum += ratings.get(i);
         }
-        return Math.round(sum*10.0/ratings.size())*10.0;
+        if(sum == 0){
+        }
+        return Math.round(sum*10.0/ratings.size())/10.0;
     }
 
     @Override

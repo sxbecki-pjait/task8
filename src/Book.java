@@ -24,11 +24,11 @@ public class Book implements MediaItem,Rentable {
 
     @Override
     public String displayInformation() {
-        return "name: " + title +
-                "\nauthor: " + author +
-                "\nyear: " + publicationYear +
-                "\nisbn: " + ISBN +
-                "\navailable: " + isAvailable + "\n";
+        return "Name: " + title +
+                "\nAuthor: " + author +
+                "\nYear: " + publicationYear +
+                "\nISBN: " + ISBN +
+                "\nAvailable: " + isAvailable + "\n";
     }
 
     @Override
