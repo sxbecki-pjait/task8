@@ -2,10 +2,10 @@ public class Book implements MediaItem,Rentable {
     private String title;
     private String author;
     private int publicationYear;
-    private int ISBN;
+    private String ISBN;
     private boolean isAvailable = true;
 
-    public Book(String title, String author, int publicationYear, int ISBN) {
+    public Book(String title, String author, int publicationYear, String ISBN) {
         this.title = title;
         this.author = author;
         this.publicationYear = publicationYear;
@@ -28,11 +28,11 @@ public class Book implements MediaItem,Rentable {
                 "\nauthor: " + author +
                 "\nyear: " + publicationYear +
                 "\nisbn: " + ISBN +
-                "\navailable: " + isAvailable;
+                "\navailable: " + isAvailable + "\n";
     }
 
     @Override
-    public boolean checkIfIsAvailable() {
+    public boolean checkAvailability() {
         return isAvailable;
     }
 
