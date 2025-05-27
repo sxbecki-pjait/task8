@@ -8,6 +8,4 @@ public interface Rentable {
     public boolean rentTheItem();
     public boolean returnTheItem();
 
-
-
 }
